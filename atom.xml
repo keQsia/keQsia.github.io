@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-18T14:08:13.397Z</updated>
+  <updated>2020-03-18T14:28:05.597Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决每次上传博客需要账户密码的问题</title>
+    <link href="http://yoursite.com/2020/03/18/%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/03/18/%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81%E9%97%AE%E9%A2%98/</id>
+    <published>2020-03-18T14:28:05.596Z</published>
+    <updated>2020-03-18T14:28:05.597Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="建立互信"><a href="#建立互信" class="headerlink" title="建立互信"></a>建立互信</h2><p>参照网上ssh建立互信办法，生成pug文件和在github上建立公钥，注意设置密码为空</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;建立互信&quot;&gt;&lt;a href=&quot;#建立互信&quot; class=&quot;headerlink&quot; title=&quot;建立互信&quot;&gt;&lt;/a&gt;建立互信&lt;/h2&gt;&lt;p&gt;参照网上ssh建立互信办法，生成pug文件和在github上建立公钥，注意设置密码为空&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>应用博客主题出现的问题</title>
