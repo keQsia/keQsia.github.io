@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-20T16:42:50.347Z</updated>
+  <updated>2020-03-22T06:51:11.732Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>解决hexo d生成网页加载失败问题</title>
-    <link href="http://yoursite.com/2020/03/20/%E8%A7%A3%E5%86%B3%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2020/03/20/%E8%A7%A3%E5%86%B3%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98/</id>
-    <published>2020-03-19T16:23:24.872Z</published>
-    <updated>2020-03-20T16:42:50.347Z</updated>
+    <title>加载Aplayer的方法</title>
+    <link href="http://yoursite.com/2020/03/22/%E5%8A%A0%E8%BD%BDAplayer/"/>
+    <id>http://yoursite.com/2020/03/22/%E5%8A%A0%E8%BD%BDAplayer/</id>
+    <published>2020-03-22T03:25:35.171Z</published>
+    <updated>2020-03-22T06:51:11.732Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="查看端口4000是否被占用"><a href="#查看端口4000是否被占用" class="headerlink" title="查看端口4000是否被占用"></a>查看端口4000是否被占用</h2><ol><li>打开CMD输入netstat -ano并找到占用的端口</li><li>查看被占用端口的PID，输入命令：netstat -ano|findstr “[端口号]” ，记下最后一位PID</li><li>继续输入tasklist|findstr “2720”，回车，查看是哪个进程或者程序占用了2720端口</li><li>结束该进程，再次使用hexo s 命令即可</li></ol><h2 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h2><p>在上述第一步后，直接打开任务管理器，根据PID找到进程结束即可</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="加载Aplayer的方法"><a href="#加载Aplayer的方法" class="headerlink" title="加载Aplayer的方法"></a>加载Aplayer的方法</h1><h2 id="一、安装Aplayer插件"><a href="#一、安装Aplayer插件" class="headerlink" title="一、安装Aplayer插件"></a>一、安装Aplayer插件</h2><p>在博客根目录下输入安装命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure><h2 id="二、开启资源文件夹"><a href="#二、开启资源文件夹" class="headerlink" title="二、开启资源文件夹"></a>二、开启资源文件夹</h2><p>修改博客根目录下的_config,yml文件：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><h2 id="三、生成页面"><a href="#三、生成页面" class="headerlink" title="三、生成页面"></a>三、生成页面</h2><p>在博客根目录下输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page musics</span><br></pre></td></tr></table></figure><p>即可生成对应文件夹及index.md和index文件夹</p><h2 id="四、修改文件及配置资源"><a href="#四、修改文件及配置资源" class="headerlink" title="四、修改文件及配置资源"></a>四、修改文件及配置资源</h2><p>修改md文件type为”musics”，键入调用代码。有两段代码可选择：</p><ol><li><p>生成单行播放栏：</p> <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer title author url [picture_url, narrow, autoplay, width:xxx, lrc:xxx] %&#125;</span><br></pre></td></tr></table></figure></li><li><p>生成播放列表（示例）：</p> <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayerlist %&#125;&#123;"narrow": false,"autoplay": true,"showlrc": 3,"mode": "random","music": [&#123;"title": "平凡之路","author": "朴树","url": "http://og9ocpmwk.bkt.clouddn.com/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF.mp3","pic": "https://ogd99kckh.qnssl.com/1.jpg","lrc": "http://og9ocpmwk.bkt.clouddn.com/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF.txt"&#125;,</span><br><span class="line">&#123;"title": "野子","author": "苏运莹","url": "http://og9ocpmwk.bkt.clouddn.com/01%20%E9%87%8E%E5%AD%90.m4a","pic": "http://og9ocpmwk.bkt.clouddn.com/%E9%87%8E%E5%AD%90.jpg","lrc":"https://ogd99kckh.qnssl.com/%E9%87%8E%E5%AD%90.txt"&#125;]&#125;&#123;% endaplayerlist %&#125;</span><br></pre></td></tr></table></figure></li></ol><p>注意引用相对路径的时候，默认根目录是source目录</p><h2 id="本地资源存放"><a href="#本地资源存放" class="headerlink" title="本地资源存放"></a>本地资源存放</h2><p>所有本地资源，包括音乐、歌词(txt格式)、封面文件都存放在博客根目录下的source/musics/index文件夹中，可以用相对路径引用</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;查看端口4000是否被占用&quot;&gt;&lt;a href=&quot;#查看端口4000是否被占用&quot; class=&quot;headerlink&quot; title=&quot;查看端口4000是否被占用&quot;&gt;&lt;/a&gt;查看端口4000是否被占用&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;打开CMD输入netstat -ano并
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决hexo d生成网页加载失败问题</title>
+    <link href="http://yoursite.com/2020/03/20/%E8%A7%A3%E5%86%B3%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/03/20/%E8%A7%A3%E5%86%B3%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2020-03-19T16:23:24.872Z</published>
+    <updated>2020-03-22T06:50:18.960Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="查看端口4000是否被占用"><a href="#查看端口4000是否被占用" class="headerlink" title="查看端口4000是否被占用"></a>查看端口4000是否被占用</h2><ol><li>打开CMD输入netstat -ano并找到占用的端口</li><li>查看被占用端口的PID，输入命令：netstat -ano|findstr “[端口号]” ，记下最后一位PID</li><li>继续输入tasklist|findstr “2720”，回车，查看是哪个进程或者程序占用了2720端口</li><li>结束该进程，再次使用hexo s 命令即可</li></ol><h2 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h2><p>在上述第一步后，直接打开任务管理器，根据PID找到进程结束即可</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
       
     
     </summary>
@@ -44,16 +65,15 @@
     <link href="http://yoursite.com/2020/03/18/%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2020/03/18/%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81%E9%97%AE%E9%A2%98/</id>
     <published>2020-03-18T14:28:05.596Z</published>
-    <updated>2020-03-18T14:28:43.177Z</updated>
+    <updated>2020-03-22T06:53:06.430Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="建立互信"><a href="#建立互信" class="headerlink" title="建立互信"></a>建立互信</h2><p>参照网上ssh建立互信办法，生成pug文件和在github上建立公钥，注意设置密码为空</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="建立互信"><a href="#建立互信" class="headerlink" title="建立互信"></a>建立互信</h2><p>参照网上ssh建立互信办法，生成pug文件和在github上建立公钥，注意设置密码为空</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;建立互信&quot;&gt;&lt;a href=&quot;#建立互信&quot; class=&quot;headerlink&quot; title=&quot;建立互信&quot;&gt;&lt;/a&gt;建立互信&lt;/h2&gt;&lt;p&gt;参照网上ssh建立互信办法，生成pug文件和在github上建立公钥，注意设置密码为空&lt;/p&gt;
-
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
       
     
     </summary>
@@ -64,18 +84,18 @@
   
   <entry>
     <title>应用博客主题出现的问题</title>
-    <link href="http://yoursite.com/2020/03/18/solve%20problem/"/>
-    <id>http://yoursite.com/2020/03/18/solve%20problem/</id>
+    <link href="http://yoursite.com/2020/03/18/%E8%A7%A3%E5%86%B3Butterfly%E4%B8%BB%E9%A2%98%E5%BA%94%E7%94%A8%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/03/18/%E8%A7%A3%E5%86%B3Butterfly%E4%B8%BB%E9%A2%98%E5%BA%94%E7%94%A8%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2020-03-18T10:50:11.639Z</published>
-    <updated>2020-03-18T14:08:13.397Z</updated>
+    <updated>2020-03-22T06:50:09.700Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="尚未解决"><a href="#尚未解决" class="headerlink" title="尚未解决"></a>尚未解决</h2><p>butterfly在建立虚拟页面时出现错误：can not read property ‘meta’ of undedined</p><p>询问成功博主期待回复（收藏于收藏夹“其他”）</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>butterfly在建立虚拟页面时出现错误：can not read property ‘xxxx’ of undedined</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>可能是相关的插件未成功安装，npm install 命令访问外网响应时间过长导致失败。安装cnpm组件，使用淘宝镜像安装。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;尚未解决&quot;&gt;&lt;a href=&quot;#尚未解决&quot; class=&quot;headerlink&quot; title=&quot;尚未解决&quot;&gt;&lt;/a&gt;尚未解决&lt;/h2&gt;&lt;p&gt;butterfly在建立虚拟页面时出现错误：can not read property ‘meta’ of undedine
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
       
     
     </summary>
@@ -86,23 +106,31 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/03/17/hello-world/"/>
-    <id>http://yoursite.com/2020/03/17/hello-world/</id>
-    <published>2020-03-17T13:20:33.631Z</published>
-    <updated>2020-03-19T15:42:11.168Z</updated>
+    <link href="http://yoursite.com/2020/03/16/hello-world/"/>
+    <id>http://yoursite.com/2020/03/16/hello-world/</id>
+    <published>2020-03-16T14:00:00.000Z</published>
+    <updated>2020-03-22T01:50:34.782Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
       
     
     </summary>
     
     
+      <category term="标准" scheme="http://yoursite.com/categories/%E6%A0%87%E5%87%86/"/>
+    
+      <category term="md" scheme="http://yoursite.com/categories/%E6%A0%87%E5%87%86/md/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="标准" scheme="http://yoursite.com/tags/%E6%A0%87%E5%87%86/"/>
     
   </entry>
   
