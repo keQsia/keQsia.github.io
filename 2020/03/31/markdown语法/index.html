@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Markdown语法 | keQsia的博客</title><meta name="description" content="Markdown语法"><meta name="author" content="keQsia"><meta name="copyright" content="keQsia"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Markdown语法"><meta name="twitter:description" content="Markdown语法"><meta name="twitter:image" content="http://keqsia.github.io/img/art3.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Markdown语法"><meta property="og:url" content="http://keqsia.github.io/2020/03/31/markdown%E8%AF%AD%E6%B3%95/"><meta property="og:site_name" content="keQsia的博客"><meta property="og:description" content="Markdown语法"><meta property="og:image" content="http://keqsia.github.io/img/art3.jpg"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      now = new Date();
+      hour = now.getHours();
+      isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://keqsia.github.io/2020/03/31/markdown%E8%AF%AD%E6%B3%95/"><link rel="prev" title="铁还原菌" href="http://keqsia.github.io/2020/06/18/%E9%93%81%E8%BF%98%E5%8E%9F%E8%8F%8C/"><link rel="next" title="加载Aplayer的方法" href="http://keqsia.github.io/2020/03/22/%E5%8A%A0%E8%BD%BDAplayer/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://keqsia.github.io/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: false,
+  isFontAwesomeV5: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="keQsia的博客" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">22</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">2</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 菜单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/musics/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(/img/art3.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">keQsia的博客</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 菜单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/musics/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Markdown语法</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-03-31<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2022-04-04</time><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></div></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h2 id="一、Markdown-简介"><a href="#一、Markdown-简介" class="headerlink" title="一、Markdown 简介"></a>一、Markdown 简介</h2><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
+<p>Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。</p>
+<p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
+<p>Markdown 编写的文档后缀为 .md, .markdown。</p>
+<h2 id="二、Markdown-语法"><a href="#二、Markdown-语法" class="headerlink" title="二、Markdown 语法"></a>二、Markdown 语法</h2><h3 id="1、标题"><a href="#1、标题" class="headerlink" title="1、标题"></a>1、标题</h3><p>标题有两种方式显示，一种是用（任意个） = 和 - 标记一级和二级标题；另一种是用一到六个 # 标记 h1~h6。如下所示：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一级标题</span><br><span class="line">===</span><br><span class="line">二级标题</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># h1</span></span><br><span class="line"><span class="section">## h2</span></span><br><span class="line"><span class="section">### h3</span></span><br><span class="line"><span class="section">#### h4</span></span><br><span class="line"><span class="section">##### h5</span></span><br><span class="line"><span class="section">###### h6</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、段落格式"><a href="#2、段落格式" class="headerlink" title="2、段落格式"></a>2、段落格式</h3><p>普通回车会被识别为空格而非分段标记，只有在段末双击回车或者空格才能实现换行。双击回车两段之间隔行，双击空格只分段不隔行。</p>
+<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><p>Markdown只有以下三种字体选择：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*斜体文本*</span></span><br><span class="line"><span class="emphasis">_斜体文本_</span></span><br><span class="line"><span class="strong">**粗体文本**</span></span><br><span class="line"><span class="strong">__粗体文本__</span></span><br><span class="line"><span class="strong">***粗斜体文本**</span>*</span><br><span class="line"><span class="strong">___粗斜体文本__</span>_</span><br></pre></td></tr></table></figure>
+
+<h4 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h4><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。</p>
+<h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p>下划线可以通过<code>&lt;u&gt;&lt;/u&gt;</code>这对标签来实现。</p>
+<h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><p>如果段落上的文字要添加删除线，只需要在文字的两端加上双波浪线<code>~~</code>即可。</p>
+<h4 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h4><p>脚注是对文本的补充说明。<br>Markdown 脚注的格式如下:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这是需要插入脚注的文字[^1]</span><br><span class="line"></span><br><span class="line">[<span class="symbol">^1</span>]:<span class="link">脚注内容，可以写在结尾。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、列表"><a href="#3、列表" class="headerlink" title="3、列表"></a>3、列表</h3><p> Markdown 支持有序列表和无序列表。</p>
+<p>无序列表使用星号<code>*</code>、加号<code>+</code>或是减号<code>-</code>作为列表标记；有序列表用数字加<code>.</code>做标记。</p>
+<p>列表可以嵌套，只需在子列表前添加若干空格即可，但是必须确保同级列表缩进一致。</p>
+<h3 id="4、区块"><a href="#4、区块" class="headerlink" title="4、区块"></a>4、区块</h3><p>Markdown 区块引用是在段落开头使用<code>&gt;</code>符号加空格，使用若干<code>&gt;</code>可以多层嵌套。区块中可以套用列表，列表中也可以套用区块，但是需要在<code>&gt;</code>前至少添加两个空格缩进，效果如下：</p>
+<blockquote>
+<p>第一层</p>
+<blockquote>
+<p>第二层</p>
+<ul>
+<li><p>第二层中的列表：</p>
+<blockquote>
+<p>列表中套用的区块</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>第三层（老千层饼了）</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>双击回车可以退出区块引用。</p>
+<h3 id="5、代码"><a href="#5、代码" class="headerlink" title="5、代码"></a>5、代码</h3><h4 id="段落内代码"><a href="#段落内代码" class="headerlink" title="段落内代码"></a>段落内代码</h4><p>段落上的一个函数或片段的代码可以用反引号包裹。</p>
+<h4 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h4><p>代码区块有两种实现方法，第一种是使用4个空格或者敲击Tab键表示；第二种是用一对<code>```</code>包裹一段代码（夹在中间），可以在第一组反引号末尾指定一种语言。</p>
+<h3 id="6、链接"><a href="#6、链接" class="headerlink" title="6、链接"></a>6、链接</h3><p>链接使用方法如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">链接名称</span>](<span class="link">链接地址</span>)</span><br></pre></td></tr></table></figure>
+
+<p>或者：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">直接显示链接地址</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>还可以通过变量设置链接，在文末对变量赋值：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这个链接用1作为网址变量（也可以用其它字符串作变量） [<span class="string">以我博客为例</span>][<span class="symbol">1</span>]</span><br><span class="line">然后在文档的结尾为变量赋值（网址）</span><br><span class="line"></span><br><span class="line">[<span class="symbol">1</span>]: <span class="link">https://keqsia.github.io/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7、图片"><a href="#7、图片" class="headerlink" title="7、图片"></a>7、图片</h3><p>Markdown 图片语法格式如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">alt 替代文本</span>](<span class="link">图片地址 "可选标题"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果需要指定图片的属性，可以用<code>&lt;img&gt;</code>标签。</p>
+<h3 id="8、锚点"><a href="#8、锚点" class="headerlink" title="8、锚点"></a>8、锚点</h3><p>锚点类似于链接，功能是跳转到当前文本想要的标题位置，使用锚点可以实现类似于目录的功能。使用方法如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">显示文本</span>](<span class="link">#标题</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，()中的标题格式是决定跳转是否成功的关键。首先，#后面不需要空格，几个#都无所谓，不影响跳转；其次，在原本标题的基础上，需要删除标题中的全部标点符号，英文字母全部小写处理；最后，全部空格都替换成-。</p>
+</blockquote>
+<h3 id="9、表格"><a href="#9、表格" class="headerlink" title="9、表格"></a>9、表格</h3><h4 id="表格使用"><a href="#表格使用" class="headerlink" title="表格使用"></a>表格使用</h4><p>绘制表格用<code>|</code>来分隔不同的单元格，使用若干个<code>-</code>来分隔表头和其他行。<br>可以通过<code>:</code>位置设计对齐方式，表格默认左对齐，格式如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、Markdown-拓展"><a href="#三、Markdown-拓展" class="headerlink" title="三、Markdown 拓展"></a>三、Markdown 拓展</h2><h3 id="1、原生支持"><a href="#1、原生支持" class="headerlink" title="1、原生支持"></a>1、原生支持</h3><h4 id="HTML-元素"><a href="#HTML-元素" class="headerlink" title="HTML 元素"></a>HTML 元素</h4><p>Markdown 支持<code>&lt;kbd&gt;</code> <code>&lt;b&gt;</code> <code>&lt;i&gt;</code> <code>&lt;em&gt;</code> <code>&lt;sup&gt;</code> <code>&lt;sub&gt;</code> <code>&lt;br&gt;</code>等HTML标签，若有不支持的标签，可以将源码写入<code>&lt;html&gt;&lt;/html&gt;</code>标签中即可显示。</p>
+<h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><p>Markdown 使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用<code>\</code>加在末尾符号前转义特殊字符，例如：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">**shenme\*</span>\*</span><br></pre></td></tr></table></figure>
+
+<h4 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h4><table>
+<thead>
+<tr>
+<th>使用方法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;reg;</td>
+<td>&reg;</td>
+</tr>
+<tr>
+<td>&amp;fnof;</td>
+<td>&fnof;</td>
+</tr>
+<tr>
+<td>&amp;radic;</td>
+<td>&radic;</td>
+</tr>
+<tr>
+<td>&amp;deg;</td>
+<td>&deg;</td>
+</tr>
+</tbody></table>
+<p>更多符号详参：<a href="http://blog.csdn.net/html5_/article/details/21639475" target="_blank" rel="noopener">http://blog.csdn.net/html5_/article/details/21639475</a></p>
+<h3 id="2、扩展支持"><a href="#2、扩展支持" class="headerlink" title="2、扩展支持"></a>2、扩展支持</h3><p>当需要使用数学公式时，可以使用两个美元符<code>$$</code>包裹 TeX 或 LaTeX 格式的数学公式，但必须确保有相应的引擎渲染。例如：<br>$$<br>\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}<br>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \<br>\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \<br>\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \<br>\end{vmatrix}<br>${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}<br>$$</p>
+<h3 id="3、Typora-图表支持"><a href="#3、Typora-图表支持" class="headerlink" title="3、Typora 图表支持"></a>3、Typora 图表支持</h3><p>Typora 的图表支持均可以在 <a href="https://mermaid-js.github.io/mermaid/#/" target="_blank" rel="noopener">Mermain Live Editor</a> 网站上进行编辑，可以复制代码或者将生成的图表下载下来，或者获取URL。</p>
+<h4 id="横向流程图"><a href="#横向流程图" class="headerlink" title="横向流程图"></a>横向流程图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A--&gt;C</span><br><span class="line">A--&gt;B</span><br><span class="line">B--&gt;E</span><br><span class="line">E--&gt;F</span><br><span class="line">E--&gt;G</span><br><span class="line">E--&gt;H</span><br></pre></td></tr></table></figure>
+
+<h4 id="纵向流程图"><a href="#纵向流程图" class="headerlink" title="纵向流程图"></a>纵向流程图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[马老师,发生肾么事了]--&gt;B[发了两张截图给我]</span><br><span class="line">B--&gt;C[我一看,哦,原来是昨天有两个年轻人不讲武德]</span><br><span class="line">C---D[一个左正蹬]</span><br><span class="line">C---E[一个右鞭腿]</span><br><span class="line">C---F[一个左刺拳]</span><br><span class="line">D--&gt;G[欺负我一个六十多岁的老同志]</span><br><span class="line">E--&gt;G</span><br><span class="line">F--&gt;G</span><br></pre></td></tr></table></figure>
+
+<h4 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">朋友--&gt;&gt;马老师:马老师，发生肾么事了？</span><br><span class="line">马老师-&gt;&gt;朋友:原来是有两个年轻人，一个二十来岁，一个三十来岁</span><br><span class="line">马老师-&gt;&gt;朋友:不讲武德，上来就是一个左正蹬，一个右鞭腿，一个左刺拳</span><br><span class="line">马老师-&gt;&gt;朋友:来骗，来偷袭，我一个六十多岁的老同志</span><br></pre></td></tr></table></figure>
+
+<h4 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram-v2</span><br><span class="line">    [*] --&gt; Still</span><br><span class="line">    Still --&gt; [*]</span><br><span class="line"></span><br><span class="line">    Still --&gt; Moving</span><br><span class="line">    Moving --&gt; Still</span><br><span class="line">    Moving --&gt; Crash</span><br><span class="line">    Crash --&gt; [*]</span><br></pre></td></tr></table></figure>
+
+<h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">st&#x3D;&gt;start: 开始框</span><br><span class="line">op&#x3D;&gt;operation: 处理框</span><br><span class="line">cond&#x3D;&gt;condition: 判断框(是或否?)</span><br><span class="line">sub1&#x3D;&gt;subroutine: 子流程</span><br><span class="line">io&#x3D;&gt;inputoutput: 输入输出框</span><br><span class="line">e&#x3D;&gt;end: 结束框</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;io-&gt;e</span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op</span><br></pre></td></tr></table></figure>
+
+<h4 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pie title 答题人数统计：马老师的门派叫什么？</span><br><span class="line">&quot;混元形意门&quot;:23</span><br><span class="line">&quot;浑圆形意门&quot;:36</span><br><span class="line">&quot;混元形意太极门&quot;:41</span><br></pre></td></tr></table></figure>
+
+<h4 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">%% 语法示例</span><br><span class="line">        gantt</span><br><span class="line">        dateFormat  YYYY-MM-DD</span><br><span class="line">        title 软件开发甘特图</span><br><span class="line">        section 设计</span><br><span class="line">        需求                      :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">        原型                      :active,  des2, 2014-01-09, 3d</span><br><span class="line">        UI设计                     :         des3, after des2, 5d</span><br><span class="line">    未来任务                     :         des4, after des3, 5d</span><br><span class="line">        section 开发</span><br><span class="line">        学习准备理解需求                      :crit, done, 2014-01-06,24h</span><br><span class="line">        设计框架                             :crit, done, after des2, 2d</span><br><span class="line">        开发                                 :crit, active, 3d</span><br><span class="line">        未来任务                              :crit, 5d</span><br><span class="line">        耍                                   :2d</span><br><span class="line">        section 测试</span><br><span class="line">        功能测试                              :active, a1, after des3, 3d</span><br><span class="line">        压力测试                               :after a1  , 20h</span><br><span class="line">        测试报告                               : 48h</span><br></pre></td></tr></table></figure>
+
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">keQsia</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://keqsia.github.io/2020/03/31/markdown%E8%AF%AD%E6%B3%95/">http://keqsia.github.io/2020/03/31/markdown%E8%AF%AD%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://keQsia.github.io" target="_blank">keQsia的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/post.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/06/18/%E9%93%81%E8%BF%98%E5%8E%9F%E8%8F%8C/"><img class="prev_cover" src="/img/post.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">铁还原菌</div></div></a></div><div class="next-post pull_right"><a href="/2020/03/22/%E5%8A%A0%E8%BD%BDAplayer/"><img class="next_cover" src="/img/art5.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">加载Aplayer的方法</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(/img/art3.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By keQsia</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script></body></html>
